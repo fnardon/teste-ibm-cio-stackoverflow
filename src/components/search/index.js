@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {BtnSearch} from '../../components/styled'
+import getSearch from '../../apis'
 
 
 const Search = () => {
@@ -8,6 +9,16 @@ const[text, setText]=useState('')
 
 
 function buscar(){
+
+    getSearch()
+     .then(res => {
+      console.log(res)
+
+     })
+     .catch(err => {
+       console.log('getSearch error: ', err)
+     })
+
 
     console.log(text)
 
